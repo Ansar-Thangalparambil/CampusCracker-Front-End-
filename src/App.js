@@ -2,9 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './Pages/Home';
 import Login from './Pages/Login';
-import Register from './Pages/Register';
 import Dashboard from './Pages/Dashboard';
-import Footer from './components/Footer';
 import Landingpage from './Pages/Landingpage';
 
 
@@ -19,12 +17,13 @@ function App() {
       <Routes>
         <Route path='/' element={<Landingpage/>} />
         <Route path='/home' element={<Home/>} />
-        {/* <Route path="/" element={<Reglog />} /> */}
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/register" element={<Login register/>} /> {/* Conditional  Rendering Step1*/}
         <Route path="/login" element={<Login />} />
+        {/* <Route path="/" element={<Reglog />} /> */}
       </Routes>
-      <Footer/>
+     
+  
 </>
   );
 }
