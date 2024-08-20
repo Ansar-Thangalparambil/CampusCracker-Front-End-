@@ -1,0 +1,18 @@
+.logbtn button{
+    background-color: #382F26;
+    color: #FFEFCD;
+    font-size: 12px;
+
+}
+.logbtn button:hover{
+    color: #382F26;
+    background-color: #FFEFCD;
+}
+.box{
+    border:2px solid #382F26;
+    border-radius: 15px;
+    padding: 61px;
+}
+.total {
+    height:100vh;
+}
