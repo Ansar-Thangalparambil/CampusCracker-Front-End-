@@ -18,19 +18,19 @@ function Register() {  /* Setting userdata taking datas from input field checkin
   const navigate = useNavigate()
 
   // Function to register (button)
-  const handleRegister =async(e)=>{
+  const handleRegister = async(e)=>{
     e.preventDefault()
     const {fullname,email,regnno,department,yearofstudy,username,password} = userData
 
-    if(!username || !email || !password  || !regnno || !department || !yearofstudy || !fullname){
-
-      alert("Please fill the form completely")
+    if(!fullname || !email  || !regnno || !department || !yearofstudy || !username || !password){
+      alert('Please fill the form completely!')
     }
     else{
-      const result = await registerAPI(userData)
-      console.log(result);
+      try{const result = await registerAPI(userData)
+      console.log(result)
+
       if(result.status===200){
-        alert(`${result.data.username} Registration Succesfull `)
+        alert(`${result.data.username} registered successfully.`)
         setUserData({
           fullname:"",email:"",regnno:"",department:"",yearofstudy:"",username:"",password:""
         })
@@ -39,7 +39,10 @@ function Register() {  /* Setting userdata taking datas from input field checkin
       else{
         alert(`${result.response.data}`)
       }
-
+    }catch(err){
+      console.log(`registration error due to: ${err}`);
+      alert('Registration Failed! Please try again.')
+    }
     }
   }
   

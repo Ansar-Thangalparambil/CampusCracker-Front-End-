@@ -4,5 +4,5 @@ import { commonAPI } from "./commonAPI"
 
 // register API
     export const registerAPI = (users)=>{
-        commonAPI('POST',`${BASE_URL}/user/register`,users,"")
+        return commonAPI('POST',`${BASE_URL}/user/register`,users,"")
     }
