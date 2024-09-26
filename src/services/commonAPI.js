@@ -1,4 +1,5 @@
 import axios from "axios"
+
 // This code is a built in syntax
 export const commonAPI = async(httpRequest,url,reqBody,reqHeader)=>{
     const reqConfig = {
