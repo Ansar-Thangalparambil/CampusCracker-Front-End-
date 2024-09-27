@@ -1,11 +1,23 @@
 import React from 'react'
 import './Home.css'
 import Footer from '../components/Footer'
+import Header from '../components/Header'
+import GeneralApt from './GeneralApt'
+
+
 
 function Home() {
+
+  
+  
+
+
   return (
     <>
+    <Header/>
       <div className="home container my-5 " >
+
+      
 
         <div className='row mt-5'>
           <div className="col-md-12 d-flex justify-content-center">
@@ -20,7 +32,7 @@ function Home() {
                     <h5 class="">General Aptitude</h5>
                     <p class="">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     {/* <p class="card-text"><small class="">Last updated 3 mins ago</small></p> */}
-                    <button className='btn-info border-0 rounded-5 px-3 py-2 fw-semibold '>Show more...</button>
+                    <GeneralApt/>
                   </div>
                 </div>
               </div>

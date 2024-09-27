@@ -4,7 +4,8 @@ import Home from './Pages/Home';
 import Login from './Pages/Login';
 import Dashboard from './Pages/Dashboard';
 import Landingpage from './Pages/Landingpage';
-import Qns from './Pages/Qns';
+import ArithmeticApt from './Sections/ArithmeticApt';
+import OnlineArithapt from './Sections/OnlineArithApt';
 
 
 
@@ -21,9 +22,9 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/register" element={<Login register/>} /> {/* Conditional  Rendering Step1*/}
         <Route path="/login" element={<Login />} />
-        <Route path="/qns" element={<Qns />} />
-      
-        {/* <Route path="/" element={<Reglog />} /> */}
+        <Route path="/arithmetic" element={<ArithmeticApt/>}/>
+        <Route path="/arithtest" element={<OnlineArithapt/>}/>
+        
       </Routes>
      
   
