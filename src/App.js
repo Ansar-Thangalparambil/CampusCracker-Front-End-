@@ -12,6 +12,9 @@ import LogicalRsng from './Sections/LogicalRsng'
 import NonVbRsng from './Sections/NonVbRsng'
 import VbabtyTest from './Sections/VbAbtyTest'
 import LogiRsngTest from './Sections/LogiRsngTest'
+import SubtopicsHome from './Pages/SubtopicsHome';
+import PoTFormulas from './SubTopics/PoTFormulas';
+import PoTGnrlQns from './SubTopics/PotGnrlQns'
 
 
 
@@ -38,6 +41,10 @@ function App() {
         <Route path='/vbrsng' element={<VbRsng/>}/>
         <Route path='/vbabtytest' element={<VbabtyTest/>}/>
         <Route path='/logirsngtest' element={<LogiRsngTest/>}/>
+        <Route path='/subtopicshome' element={<SubtopicsHome/>}/>
+        <Route path='/potformulas' element={<PoTFormulas/>}/>
+        <Route path='/potgnrlqns' element={<PoTGnrlQns/>}/>
+        
 
        
         
