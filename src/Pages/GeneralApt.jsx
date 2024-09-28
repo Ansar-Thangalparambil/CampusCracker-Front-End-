@@ -12,6 +12,7 @@ function GeneralApt() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  
 
   return (
     <>

@@ -6,6 +6,13 @@ import Dashboard from './Pages/Dashboard';
 import Landingpage from './Pages/Landingpage';
 import ArithmeticApt from './Sections/ArithmeticApt';
 import OnlineArithapt from './Sections/OnlineArithApt';
+import VbRsng from './Sections/VbRsng'
+import VerbalAblty from './Sections/VerbalAblty'
+import LogicalRsng from './Sections/LogicalRsng'
+import NonVbRsng from './Sections/NonVbRsng'
+import VbabtyTest from './Sections/VbAbtyTest'
+import LogiRsngTest from './Sections/LogiRsngTest'
+
 
 
 
@@ -24,8 +31,17 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/arithmetic" element={<ArithmeticApt/>}/>
         <Route path="/arithtest" element={<OnlineArithapt/>}/>
+        <Route path="/verbalability" element={<VerbalAblty/>}/>
+        <Route path='/logicalreasoning' element={<LogicalRsng/>}/>
+        <Route path='/nonvbrsng' element={<NonVbRsng/>}/>
+        <Route path='/arithtest' element={<OnlineArithapt/>}/>
+        <Route path='/vbrsng' element={<VbRsng/>}/>
+        <Route path='/vbabtytest' element={<VbabtyTest/>}/>
+        <Route path='/logirsngtest' element={<LogiRsngTest/>}/>
+
+       
         
-      </Routes>
+      </Routes >
      
   
 </>
