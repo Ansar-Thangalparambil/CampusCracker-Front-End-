@@ -3,6 +3,8 @@ import './Home.css'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import GeneralApt from './GeneralApt'
+import VerbalRsng from './VerbalRsng'
+import OnlineTests from './OnlineTests'
 
 
 
@@ -30,7 +32,7 @@ function Home() {
                 <div class="col-md-7 text-start d-flex justify-content-center flex-column">
                   <div class="p-3 text-dark">
                     <h5 class="">General Aptitude</h5>
-                    <p class="">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="">The General Aptitude section of CampusCracker is a dynamic and interactive learning platform designed to sharpen students' problem-solving and analytical skills.</p>
                     {/* <p class="card-text"><small class="">Last updated 3 mins ago</small></p> */}
                     <GeneralApt/>
                   </div>
@@ -51,10 +53,10 @@ function Home() {
                 </div>
                 <div class="col-md-7 text-start d-flex justify-content-center flex-column">
                   <div class="p-3 text-dark">
-                    <h5 class="">Verbal Reasoning</h5>
-                    <p class="">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <h5 class="">Verbal and Reasoning</h5>
+                    <p class="">The Verbal Ability section of CampusCracker is designed to enhance students' language proficiency and communication skills, crucial for success in campus placements and competitive exams.</p>
                     {/* <p class="card-text"><small class="">Last updated 3 mins ago</small></p> */}
-                    <button className='btn-success border-0 rounded-5 px-3 py-2 fw-semibold '>Show more...</button>
+                    <VerbalRsng/>
                   </div>
                 </div>
               </div>
@@ -74,9 +76,9 @@ function Home() {
                 <div class="col-md-7 text-start d-flex justify-content-center flex-column">
                   <div class="p-3 text-dark">
                     <h5 class="">Onlne Tests</h5>
-                    <p class="">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="">The Online Test section of CampusCracker offers a seamless and comprehensive platform for students to take timed assessments, mimicking real-world placement exams and competitive tests.</p>
                     {/* <p class="card-text"><small class="">Last updated 3 mins ago</small></p> */}
-                    <button className='btn-dark text-light border-0 rounded-5 px-3 py-2 fw-semibold '>Show more...</button>
+                    <OnlineTests/>
                   </div>
                 </div>
               </div>
