@@ -5,7 +5,7 @@ function SubtopicsHome() {
   return (
     <div className='d-flex flex-column'>
       <Link to={'/potformulas'}>Problems On Train - Formulas</Link>
-      <Link to={'/potgnrlqns'} >Problems on Train - Questions</Link>
+      <Link to={'/potgnrlqns'} state={{category:"PoT"}}>Problems on Train - Questions</Link>
     </div>
   )
 }
