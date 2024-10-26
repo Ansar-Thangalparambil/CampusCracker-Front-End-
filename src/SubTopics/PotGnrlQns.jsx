@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Collapse from 'react-bootstrap/Collapse';
 import { arithQuestionAPI } from '../services/allAPI';
+import './potgnrlqstns.css'
 // import { useLocation } from 'react-router-dom';
 
 function PotGnrlQns() {
@@ -52,6 +53,17 @@ function PotGnrlQns() {
     );
   };
 
+  const [selectedAnswers, setSelectedAnswers] = useState({});
+
+  const handleOption = (questionId, selectedOption) => {
+    const question = arithQuestions.find((q) => q._id === questionId);
+    const isCorrect = selectedOption === question.answer;
+    setSelectedAnswers((prev) => ({
+      ...prev,
+      [questionId]: { selected: selectedOption, isCorrect },
+    }));
+  };
+
   return (
     <>
       <div className="container">
@@ -68,34 +80,60 @@ function PotGnrlQns() {
             </div>
           </div>
 
-          <div className="options ms-4">
+          {/* <div className="options ms-4">
             
-            <div className="optA d-flex gap-3">
+            <div className="optA d-flex gap-3"  onClick={handleOption}>
               <div className="a">a</div>
               <div className="option">
                 <p>{item.option_a}</p>
               </div>
             </div>
-            <div className="optA d-flex gap-3">
+
+            <div className="optA d-flex gap-3" onClick={handleOption}>
               <div className="a">b</div>
               <div className="option">
                 <p>{item.option_b}</p>
               </div>
             </div>
-            <div className="optA d-flex gap-3">
+
+            <div className="optA d-flex gap-3" onClick={handleOption}>
               <div className="a">c</div>
               <div className="option">
                 <p>{item.option_c}</p>
               </div>
             </div>
-            <div className="optA d-flex gap-3">
+
+            <div className="optA d-flex gap-3"  onClick={handleOption}>
               <div className="a">d</div>
               <div className="option">
                 <p>{item.option_d}</p>
               </div>
             </div>
 
-          </div>
+          </div> */}
+
+          <div className="options ms-4">
+              {['a', 'b', 'c', 'd'].map((opt) => (
+                <div
+                  key={opt}
+                  className={`optA d-flex gap-3 ${
+                    selectedAnswers[item._id]?.selected === item[`option_${opt}`]
+                      ? selectedAnswers[item._id].isCorrect
+                        ? 'correct'
+                        : 'incorrect'
+                      : ''
+                  }`}
+                  onClick={() => handleOption(item._id, item[`option_${opt}`])}
+                >
+                  <div className="a">{opt}</div>
+                  <div className="option">
+                    <p>{item[`option_${opt}`]}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          
 
           <div className="ms-4 ansandexplnsn">
           <>
