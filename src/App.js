@@ -15,6 +15,7 @@ import LogiRsngTest from './Sections/LogiRsngTest'
 import SubtopicsHome from './Pages/SubtopicsHome';
 import PoTFormulas from './SubTopics/PoTFormulas';
 import PoTGnrlQns from './SubTopics/PotGnrlQns'
+import TimeAndWorks from './Exams/TimeAndWorks';
 
 
 
@@ -44,6 +45,7 @@ function App() {
         <Route path='/subtopicshome' element={<SubtopicsHome/>}/>
         <Route path='/potformulas' element={<PoTFormulas/>}/>
         <Route path='/potgnrlqns' element={<PoTGnrlQns/>}/>
+        <Route path='/exmtimeworks' element={<TimeAndWorks/>}/>
         
 
        
