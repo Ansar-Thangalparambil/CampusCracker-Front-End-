@@ -14,6 +14,7 @@ CampusCracker is a comprehensive online platform designed to prepare students fo
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
+- [Screenshots](#screenshots)
 
 ---
 
@@ -50,10 +51,14 @@ CampusCracker’s objective is to provide an online environment where students c
 - **Authentication**: JSON Web Tokens (JWT)
 - **UI Components**: React-Bootstrap
 
-## Installation
-To run CampusCracker locally, follow these steps:
+## Usage
+Once the application is running, you can access it through your browser at http://localhost:3000.
+-**For Administrators**: Log in using your admin credentials to manage users and content.
+-**For Students**: Register an account or log in to start practicing aptitude tests and tracking performance.
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/your-username/CampusCracker.git
-   cd CampusCracker
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
+CampusCracker aims to provide students with a robust, interactive platform for improving their aptitude skills, ultimately boosting their confidence and performance in campus placements.
+
+## Screenshots
+Here are some screenshots of the CampusCracker platform:
