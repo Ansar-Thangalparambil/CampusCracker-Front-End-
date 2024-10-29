@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# CampusCracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+CampusCracker is a comprehensive online platform designed to prepare students for campus placements and interviews through structured aptitude tests and practice sessions. With modules for both students and administrators, the platform ensures an organized, user-friendly, and interactive experience for students and efficient management capabilities for administrators.
 
-## Available Scripts
+## Table of Contents
+- [Introduction](#introduction)
+- [Motivation](#motivation)
+- [Objective](#objective)
+- [Core Functionalities](#core-functionalities)
+  - [Admin Functionalities](#admin-functionalities)
+  - [Student Functionalities](#student-functionalities)
+- [Technology Stack](#technology-stack)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Introduction
+CampusCracker provides a platform for students to enhance their aptitude skills and improve their chances in campus placements. With a role-based access system, administrators can manage students, topics, and questions seamlessly, while students can engage in targeted practice and track their performance.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Motivation
+With increasing competition in campus placements, students require platforms that offer structured and real-time feedback. Traditional preparation lacks personalized and timely feedback. CampusCracker fills this gap by offering an integrated solution for tailored practice, progress tracking, and performance assessments.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Objective
+CampusCracker’s objective is to provide an online environment where students can improve their aptitude skills through structured, practice-oriented sessions tailored to placement needs. It aims to address the lack of focused preparation tools by offering relevant topics, customized practice sessions, and detailed performance tracking.
 
-### `npm test`
+## Core Functionalities
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Admin Functionalities
+1. **Login**: Secure login with role-based access and password recovery options.
+2. **View Users**: Display a list of registered students with options for search, filter, and profile view.
+3. **Manage Users**: Add, edit, and delete student accounts with support for bulk operations.
+4. **View Topics**: Categorize and monitor topics for practice and exam questions.
+5. **Add/Manage Practice Questions**: Create, edit, delete, and bulk upload practice questions.
+6. **Add/Manage Exam Questions**: Add and assign questions to exams, with randomization options.
 
-### `npm run build`
+### Student Functionalities
+1. **Registration/Login**: Secure signup or login with email and password.
+2. **Access Tests**: View and select from available aptitude tests and practice sessions.
+3. **Practice Topics**: Choose specific topics for aptitude practice.
+4. **Attempt Tests**: Take aptitude tests and practice sessions with a timed setup.
+5. **View Results**: Access detailed performance reports, including test attendance percentage.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technology Stack
+- **Frontend**: React.js
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+- **Authentication**: JSON Web Tokens (JWT)
+- **UI Components**: React-Bootstrap
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
+To run CampusCracker locally, follow these steps:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-username/CampusCracker.git
+   cd CampusCracker
