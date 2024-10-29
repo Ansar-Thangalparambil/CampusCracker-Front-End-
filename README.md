@@ -10,9 +10,7 @@ CampusCracker is a comprehensive online platform designed to prepare students fo
   - [Admin Functionalities](#admin-functionalities)
   - [Student Functionalities](#student-functionalities)
 - [Technology Stack](#technology-stack)
-- [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
 - [License](#license)
 - [Screenshots](#screenshots)
 
@@ -53,8 +51,8 @@ CampusCracker’s objective is to provide an online environment where students c
 
 ## Usage
 Once the application is running, you can access it through your browser at http://localhost:3000.
--**For Administrators**: Log in using your admin credentials to manage users and content.
--**For Students**: Register an account or log in to start practicing aptitude tests and tracking performance.
+- **For Administrators**: Log in using your admin credentials to manage users and content.
+- **For Students**: Register an account or log in to start practicing aptitude tests and tracking performance.
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
