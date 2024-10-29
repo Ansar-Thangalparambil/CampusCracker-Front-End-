@@ -16,3 +16,8 @@ import { commonAPI } from "./commonAPI"
     export const getGeneralQuestionAPI = async(sectionName,categoryName)=>{
         return await commonAPI('GET',`${BASE_URL}/general/${sectionName}/${categoryName}`) 
     }
+
+    // Getting general exam questions
+    export const getGeneralExamAPI = async(sectionName,categoryName)=>{
+        return await commonAPI('GET',`${BASE_URL}/general/exam/${sectionName}/${categoryName}`)
+    }

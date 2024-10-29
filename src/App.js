@@ -14,7 +14,7 @@ import VbabtyTest from './Sections/VbAbtyTest'
 import LogiRsngTest from './Sections/LogiRsngTest'
 import SubtopicsHome from './Pages/SubtopicsHome';
 import PoTFormulas from './SubTopics/PoTFormulas';
-import TimeAndWorks from './Exams/TimeAndWorks';
+import GeneralExam from './Exams/GeneralExam';
 import GeneralQns from './SubTopics/GeneralQns';
 
 
@@ -45,7 +45,7 @@ function App() {
         <Route path='/subtopicshome' element={<SubtopicsHome/>}/>
         <Route path='/potformulas' element={<PoTFormulas/>}/>
         <Route path='/generalqns' element={<GeneralQns/>}/>
-        <Route path='/exmtimeworks' element={<TimeAndWorks/>}/>
+        <Route path='/generalexam' element={<GeneralExam/>}/>
         
 
        
