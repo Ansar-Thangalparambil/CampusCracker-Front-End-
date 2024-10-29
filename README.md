@@ -65,5 +65,8 @@ Here are some screenshots of the CampusCracker platform:
 
 ![Screenshot 2024-10-28 220621](https://github.com/user-attachments/assets/94b00fb2-bc42-4645-8918-1e18815c78d4)
 
+![Screenshot 2024-10-29 215459](https://github.com/user-attachments/assets/5e2f4ebf-5edd-4e82-9f12-29bc36f642f2)
+
+
 
 
