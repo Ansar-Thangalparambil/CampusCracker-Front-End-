@@ -2,74 +2,62 @@ import React, { useEffect } from 'react'
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Collapse from 'react-bootstrap/Collapse';
-import { arithQuestionAPI } from '../services/allAPI';
 import './potgnrlqstns.css'
-// import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { getGeneralQuestionAPI } from '../services/allAPI';
 
-function PotGnrlQns() {
+function GeneralQns() {
 
-  const [openIndexes, setOpenIndexes] = useState([])
-  // const location = useLocation();
-  const category = "PoT"
-  const [arithQuestions, setArithQuestions] = useState([])
-  // const [section, setSection] = useState(null)
+    const passedData = useLocation().state?.data
+    const section_name = passedData.section_name
+    const category = passedData.category
 
-  // const getSection = async()=>{
-  //  try{
-  //     const result = await arithQuestionAPI();
-  //     console.log("API Result:", result);
-  //     setSection(result)
-  //   }catch(err){
-  //     console.log(`Request failed due to ${err}`);
-  //   }
-  // };
-
-  // useEffect(()=>{
-  //   getSection();
-  // },[])
-
-  const getArithQuestions = async()=>{
-    try {
-      const result = await arithQuestionAPI();
-      console.log(result.data);
-      
-      if(result && result.data && Array.isArray(result.data)){
-        setArithQuestions(result.data);
-      }else{
-        console.log('No questions found!');  
-      }
-    } catch (error) {
-      console.error('Error fetching Arithmetic aptitude questions:', error);
-    }
-  };
-
-  useEffect(()=>{
-    getArithQuestions();
-  },[]);
-
- const toggleOpen = (index)=>{
-    setOpenIndexes((prev)=>
-      prev.includes(index) ? prev.filter((i)=>i !== index):[...prev, index]
-    );
-  };
-
-  const [selectedAnswers, setSelectedAnswers] = useState({});
-
-  const handleOption = (questionId, selectedOption) => {
-    const question = arithQuestions.find((q) => q._id === questionId);
-    const isCorrect = selectedOption === question.answer;
-    setSelectedAnswers((prev) => ({
-      ...prev,
-      [questionId]: { selected: selectedOption, isCorrect },
-    }));
-  };
+    const [openIndexes, setOpenIndexes] = useState([])
+    const [generalQuestions, setGeneralQuestions] = useState([]) 
+    
+    const getArithQuestions = async()=>{
+        try {
+          const result = await getGeneralQuestionAPI(section_name,category);
+          console.log(result.data);
+          
+          if(result && result.data && Array.isArray(result.data)){
+            setGeneralQuestions(result.data);
+          }else{
+            console.log('No questions found!');  
+          }
+        } catch (error) {
+          console.error('Error fetching Arithmetic aptitude questions:', error);
+        }
+      };
+    
+      useEffect(()=>{
+        getArithQuestions();
+      },[]);
+    
+     const toggleOpen = (index)=>{
+        setOpenIndexes((prev)=>
+          prev.includes(index) ? prev.filter((i)=>i !== index):[...prev, index]
+        );
+      };
+    
+      const [selectedAnswers, setSelectedAnswers] = useState({});
+    
+      const handleOption = (questionId, selectedOption) => {
+        const question = generalQuestions.find((q) => q._id === questionId);
+        const isCorrect = selectedOption === question.answer;
+        setSelectedAnswers((prev) => ({
+          ...prev,
+          [questionId]: { selected: selectedOption, isCorrect },
+        }));
+      };
+    
 
   return (
     <>
       <div className="container">
 
-        {arithQuestions?.length > 0? (
-          arithQuestions?.map((item,index)=>(
+        {generalQuestions?.length > 0? (
+          generalQuestions?.map((item,index)=>(
           <div className="tot-qstn" key={index}>
           <div className="qstn d-flex gap-2">
             <div className="qno ">
@@ -168,4 +156,4 @@ function PotGnrlQns() {
   )
 }
 
-export default PotGnrlQns
+export default GeneralQns

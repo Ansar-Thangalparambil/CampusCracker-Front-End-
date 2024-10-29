@@ -12,7 +12,7 @@ import { commonAPI } from "./commonAPI"
         return await commonAPI('POST',`${BASE_URL}/user/login`,users,"")
     }
 
-    // get Arith apt Questions
-    export const arithQuestionAPI = async()=>{
-        return await commonAPI('GET',`${BASE_URL}/general/arith/pot`)
+   // Getting general questions
+    export const getGeneralQuestionAPI = async(sectionName,categoryName)=>{
+        return await commonAPI('GET',`${BASE_URL}/general/${sectionName}/${categoryName}`) 
     }
