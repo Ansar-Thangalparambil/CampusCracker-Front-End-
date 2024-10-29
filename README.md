@@ -60,3 +60,10 @@ CampusCracker aims to provide students with a robust, interactive platform for i
 
 ## Screenshots
 Here are some screenshots of the CampusCracker platform:
+
+![Screenshot 2024-10-28 220555](https://github.com/user-attachments/assets/5b1e4838-fe87-4146-b627-29ec671b92ea)
+
+![Screenshot 2024-10-28 220621](https://github.com/user-attachments/assets/94b00fb2-bc42-4645-8918-1e18815c78d4)
+
+
+
