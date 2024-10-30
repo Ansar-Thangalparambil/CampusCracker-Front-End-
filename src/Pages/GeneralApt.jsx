@@ -6,6 +6,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { Link } from 'react-router-dom';
+// import OnlineArithApt from '../Sections/OnlineArithApt';
 
 
 
@@ -21,7 +22,7 @@ function GeneralApt() {
     {
       imgSrc:pot,
       route:'/generalqns',
-      routeName:'Problems on Train - Questions',
+      routeName:'Problems on Train',
       formulaRoute:'/potformulas',
       formulaName:'Problems On Train - Formulas',
       section_name:'Arithmetic_aptitude',
@@ -69,9 +70,10 @@ function GeneralApt() {
               Arithmetic Aptitude
               <Link to={'/arithmetic'} state={{data:datas}}><Button className='rounded-5' variant="primary" >Try now!</Button></Link>
            </div>
+
            <div className='d-flex justify-content-evenly mb-3'>
               Online Aptitude Test
-              <Link to={'/arithtest'}><Button className='rounded-5' variant="primary" >Try now!</Button></Link>
+              <Link to={'/arithtest'} state={{data:datas}}><Button className='rounded-5' variant="primary" >Try now!</Button></Link>
            </div>
 
           </Modal.Body>
