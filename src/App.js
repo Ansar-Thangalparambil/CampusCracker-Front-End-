@@ -16,6 +16,7 @@ import SubtopicsHome from './Pages/SubtopicsHome';
 import PoTFormulas from './SubTopics/PoTFormulas';
 import GeneralExam from './Exams/GeneralExam';
 import GeneralQns from './SubTopics/GeneralQns';
+import Result from './Exams/Result';
 
 
 
@@ -46,9 +47,7 @@ function App() {
         <Route path='/potformulas' element={<PoTFormulas/>}/>
         <Route path='/generalqns' element={<GeneralQns/>}/>
         <Route path='/generalexam' element={<GeneralExam/>}/>
-        
-
-       
+        <Route path='/examresults' element={<Result/>}/>
         
       </Routes >
      
