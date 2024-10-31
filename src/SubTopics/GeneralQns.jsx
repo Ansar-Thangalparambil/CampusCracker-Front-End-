@@ -9,7 +9,7 @@ import { getGeneralQuestionAPI } from '../services/allAPI';
 function GeneralQns() {
 
     const passedData = useLocation().state?.data
-    console.log(passedData);
+    // console.log(passedData);
     
     const section_name = passedData.section_name
     const category = passedData.category
