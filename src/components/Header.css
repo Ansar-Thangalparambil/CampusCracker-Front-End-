@@ -78,3 +78,26 @@
   .slider.round:before {
     border-radius: 50%;
   }
+
+  .fa-ellipsis-vertical{
+    transform: rotate(90deg);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: -.2rem;
+  }
+
+  .user{
+    background-color: transparent;
+  }
+  .user:hover{
+    cursor: pointer;
+  }
+
+  .user:hover {
+    color: #f3c769;
+  }
+
+  .userfocus {
+    color: #f3c769;
+  }

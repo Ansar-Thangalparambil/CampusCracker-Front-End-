@@ -5,6 +5,7 @@ import Header from '../components/Header'
 import GeneralApt from './GeneralApt'
 import VerbalRsng from './VerbalRsng'
 import OnlineTests from './OnlineTests'
+import UserPopup from '../components/UserPopup'
 
 
 
@@ -17,6 +18,7 @@ function Home() {
   return (
     <>
     <Header/>
+    <UserPopup/>
       <div className="home container my-5 " >
 
       
