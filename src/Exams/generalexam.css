@@ -22,7 +22,7 @@
 
 .radio-input:checked {
     background-color: #ffffff;
-    border-color: #6899ef;
+    border-color: rgba(0, 0, 255, 0.723);
 }
 
 .radio-input:checked::before {
