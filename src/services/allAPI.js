@@ -23,6 +23,6 @@ import { commonAPI } from "./commonAPI"
     }
 
     // Adding exam results to database
-    export const addResultsAPI = async(results,reqHeader)=>{
-        return await commonAPI('POST',`${BASE_URL}/user/results/add`,results,reqHeader)
+    export const addResultsAPI = async(reqBody,reqHeader)=>{
+        return await commonAPI('POST',`${BASE_URL}/user/results/add`,reqBody,reqHeader)
     }

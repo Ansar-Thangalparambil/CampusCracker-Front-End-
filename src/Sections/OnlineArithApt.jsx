@@ -10,7 +10,11 @@ function OnlineArithApt() {
 
   const passedData = useLocation().state?.data
 
-  console.log(passedData);
+  const clearSession = () =>{
+    sessionStorage.removeItem("examCompleted")
+  } 
+
+  // console.log(passedData);
 
     // For Modal
     // const [show, setShow] = useState(false);
@@ -53,7 +57,7 @@ function OnlineArithApt() {
           <div>
             <h5 class="mt-0">{item.routeName}</h5>
             <p>This is some placeholder content for the custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
-            <Link to={'/generalexam'}  state={{data:[
+            <Link to={'/generalexam'} onClick={clearSession} state={{data:[
             {
               section_name:item.section_name,
               category:item.category,

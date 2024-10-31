@@ -8,12 +8,15 @@ import Modal from 'react-bootstrap/Modal';
 function GeneralExam() {
 
     const passedData = useLocation().state?.data[0]
+    // console.log(passedData);
+    
     const section_name = passedData.section_name
     const category = passedData.category
 
     const [examQns, setExamQns] = useState([])
+    
     const [userAnswers, setUserAnswers] = useState({})
-    const [examResult, setExamResult] = useState(null)
+
     //state for holding token
     const [token, setToken] = useState("")
 
@@ -63,16 +66,31 @@ function GeneralExam() {
     }
 
     //function for adding results into database
-    const handleResults = async() =>{
-        const {score, percentage, passed} = examResult
+    const handleResults = async(result) =>{
         
         if(token){
+            const reqBody={
+                examResult:{
+                    score:result.score,
+                    percentage:result.percentage,
+                    passed:result.passed
+                },
+                category,
+            }
             const reqHeader = {
                 "Content-Type":"application/json",
                 "Authorization":`Bearer ${token}`
             }
+
             try {
-                const result = await addResultsAPI(examResult,reqHeader)
+                const result = await addResultsAPI(reqBody,reqHeader)
+                if(result.status === 200){
+                    console.log(result.data);
+                    alert('Your result saved successfully.')
+                    
+                }else{
+                    alert(result.response.data)
+                }
             } catch (error) {
                 console.log(`Request failed due to ${error}`);
                 
@@ -91,23 +109,27 @@ function GeneralExam() {
         });
 
         const totalQuestions = examQns.length;
-        const percentage = (score / totalQuestions) * 100;
+        let percentage = (score / totalQuestions) * 100;
+        if(percentage%10 !== 0){
+            percentage = ((score/totalQuestions)*100).toFixed(2)
+        }
         const passed = percentage >= 65;
 
         const result = {score, percentage, passed}
-        setExamResult(result);
-
+        
         //clearing all the selected options
         setUserAnswers({})
 
         //setting exam status before showing results
         sessionStorage.setItem('examCompleted','true')
 
-        //navigate to results page
-        navigate('/examresults', {state:{results:result}})
+        //calling handleResults function for saving results after clicking submit
+        handleResults(result)
 
-        //open modal for showing results
-        // handleShow()
+        //navigate to results page
+        navigate('/examresults', {state:{data:{results:result,outOf:examQns.length}}})
+
+        
     }
 
     const goHome = () =>{
@@ -115,7 +137,6 @@ function GeneralExam() {
         sessionStorage.removeItem('examCompleted')
     }
 
-    
     useEffect(()=>{
         getGeneralExam()
     },[])
@@ -130,7 +151,7 @@ function GeneralExam() {
                 </div>
                 <div className="exmDetails d-flex justify-content-between">
                     <div className="totQns">
-                        <h3>10 Questions</h3>
+                        <h3>{examQns.length} Questions</h3>
                     </div>
                     <div className="passMarks">
                         <h4>Pass Marks: 65%</h4>
