@@ -20,6 +20,9 @@ function GeneralExam() {
     //state for holding token
     const [token, setToken] = useState("")
 
+     // Timer state
+     const [timeRemaining, setTimeRemaining] = useState(10 * 60); // 10 minutes in seconds
+
     //for obtaining token when page loads
     useEffect(()=>{
         if(sessionStorage.getItem("token")){
@@ -45,6 +48,26 @@ function GeneralExam() {
             handleShow()
         }
     },[])
+
+    // Timer countdown logic
+    useEffect(() => {
+        if (timeRemaining <= 0) {
+            handleSubmit(); // Automatically submit when time runs out
+            return;
+        }
+        const timer = setInterval(() => {
+            setTimeRemaining((prev) => prev - 1);
+        }, 1000);
+        
+        return () => clearInterval(timer); // Clean up timer on component unmount
+    }, [timeRemaining]);
+
+    // Convert seconds to minutes and seconds for display
+    const formatTime = (time) => {
+        const minutes = Math.floor(time / 60);
+        const seconds = time % 60;
+        return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    };
     
     
     const getGeneralExam = async() =>{
@@ -157,7 +180,7 @@ function GeneralExam() {
                         <h4>Pass Marks: 65%</h4>
                     </div>
                     <div className="timeRemaining">
-                        <h3>Time remaining: 10.00</h3>
+                        <h3>Time remaining:{formatTime(timeRemaining)}</h3>
                     </div>
                 </div>
             </div>
