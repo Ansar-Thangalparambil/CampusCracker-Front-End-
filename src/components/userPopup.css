@@ -10,8 +10,8 @@
 }
 
 .user-popup {
-    /* width: 300px; */ /* Adjust as needed */
-    height: 80vh;
+    width: auto; 
+    height: 66vh;
     background-color: #111520;
     color: white;
     display: flex;
@@ -21,3 +21,56 @@
     transition: transform 0.3s ease-in-out;
     border-radius: 25px;
 }
+
+.exm-history,.results,.performance{
+    border-top: 1px solid #808080;
+    font-size: .95rem;
+}
+.performance{
+    border-bottom: 1px solid #808080;
+}
+
+.info-body li{
+    list-style: none;
+}
+
+.info-body div{
+    transition: background-color .3s;
+}
+
+.info-body div:hover{
+    background-color: #1f263a75;
+}
+
+.info-footer i{
+    color: orange;
+    transition: color 1.5s ease;
+}
+
+@keyframes rotate{
+    0%{
+        rotate: 0deg;
+        color: orange;
+    }
+    
+    35%{
+        rotate: 270deg;
+        color: orangered;
+    }
+    
+    70%{
+        rotate: 180deg;
+        color: #ff9900;
+    }
+    
+    100%{
+        rotate: 360deg;
+        color: red;
+    }
+}
+
+.info-footer button:hover i{
+    color: red;
+    animation: rotate 2.8s ease ;
+}
+
