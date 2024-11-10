@@ -90,11 +90,11 @@
   .user{
     background-color: transparent;
   }
-  .user:hover{
+  .user:hover,.userfocus:hover {
     cursor: pointer;
   }
 
-  .user:hover {
+  .user:hover{
     color: #f3c769;
   }
 
