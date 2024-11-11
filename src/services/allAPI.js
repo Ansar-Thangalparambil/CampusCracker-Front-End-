@@ -26,3 +26,8 @@ import { commonAPI } from "./commonAPI"
     export const addResultsAPI = async(reqBody,reqHeader)=>{
         return await commonAPI('POST',`${BASE_URL}/user/results/add`,reqBody,reqHeader)
     }
+
+    // Updating profile details
+    export const  updateDetailsAPI = async(reqBody,reqHeader)=>{
+        return await commonAPI('PUT',`${BASE_URL}/user/editprofile`,reqBody,reqHeader)
+    }
