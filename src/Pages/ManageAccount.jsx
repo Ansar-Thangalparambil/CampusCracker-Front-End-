@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../Pages/ManageAccounts.css'
 import userIMG from '../assets/default-avatar-icon-of-social-media-user-vector.jpg'
-import { updateDetailsAPI } from '../services/allAPI';
+import { getUserDetailsAPI, updateDetailsAPI } from '../services/allAPI';
 import { BASE_URL } from '../services/baseurl';
 
 function ManageAccount() {
@@ -18,6 +18,27 @@ function ManageAccount() {
   const existingUser = JSON.parse(sessionStorage.getItem('existingUser'))
   console.log(existingUser);
 
+  // const [existingUser, setExstingUser] = useState({})
+  // console.log(existingUser);
+  
+  // for getting updated user details 
+  const getUserDetails = async() =>{
+    if (token){
+      const reqHeader = {
+        "Content-Type" : "application/json",
+        "Authorization" : `Bearer ${token}`
+      }
+      const result = await getUserDetailsAPI(reqHeader)
+      console.log(result.data);
+      setUserDetails(result.data)
+    }  
+  }
+
+  useEffect(()=>{
+    token&&
+    getUserDetails()
+  },[token])
+
   const [userDetails, setUserDetails] = useState({
     fullname:existingUser.fullname,
     username:existingUser.username,
@@ -25,13 +46,30 @@ function ManageAccount() {
     yearofstudy:existingUser.yearofstudy,
     profileimg:existingUser.profileimg
   })
+  console.log(userDetails);
+
   //state for holding the URL of the image file
   const [preview, setPreview] = useState("")
 
-  useEffect(()=>{
-    userDetails.profileimg &&
-    setPreview(URL.createObjectURL(userDetails.profileimg))
-  },[userDetails.profileimg])
+  // useEffect(()=>{
+  //   userDetails.profileimg &&
+  //   setPreview(URL.createObjectURL(userDetails.profileimg))
+  // },[userDetails.profileimg])
+  
+  useEffect(() => {
+    let objectUrl;
+    if (userDetails.profileimg instanceof File || userDetails.profileimg instanceof Blob) {
+        objectUrl = URL.createObjectURL(userDetails.profileimg);
+        setPreview(objectUrl);
+    } else if (userDetails.profileimg) {
+        setPreview(`${BASE_URL}/uploads/${userDetails.profileimg}`);
+    }
+    return () => {
+        if (objectUrl) {
+            URL.revokeObjectURL(objectUrl);
+        }
+    };
+}, [userDetails.profileimg]);
   
   //state for checking view or edit mode
   const [isEdit, setIsEdit] = useState(false)
@@ -60,6 +98,7 @@ function ManageAccount() {
 
   }
 
+  // for updating user details
   const updateUserDetails = async(e) =>{
     e.preventDefault()
     const {fullname,username,department,yearofstudy,profileimg} = userDetails
@@ -87,6 +126,9 @@ function ManageAccount() {
         const result = await updateDetailsAPI(reqBody,reqHeader)
         console.log(result);
         if(result.status === 200){
+          setIsEdit(!isEdit)
+          setUserDetails(result.data)
+          sessionStorage.setItem("existingUser", JSON.stringify(result.data))
           alert('Profile updated successfully.')
         }else{
           console.log(result.response.data);
@@ -102,19 +144,21 @@ function ManageAccount() {
         const result = await updateDetailsAPI(reqBody,reqHeader)
         console.log(result);
         if(result.status === 200){
+          setIsEdit(!isEdit)
+          setUserDetails(result.data)
+          sessionStorage.setItem("existingUser", JSON.stringify(result.data))
           alert('Profile updated successfully.')
         }else{
           console.log(result.response.data);
           
         }
 
-        console.log(result.response.data);
-        
-
       }
 
     }
   }
+
+  
 
   return (
     <div className='container tot-body'>
@@ -127,8 +171,8 @@ function ManageAccount() {
           </label>
             :
             <label className='pro-img'>
-              {existingUser.profileimg?
-                <img src={`${BASE_URL}/uploads/${existingUser.profileimg}`} alt="userIcon"/>
+              {userDetails.profileimg?
+                <img src={`${BASE_URL}/uploads/${userDetails.profileimg}`} alt="userIcon"/>
                 :
                 <img src={userIMG} alt="" />
               }
@@ -142,7 +186,7 @@ function ManageAccount() {
             {isEdit?
             <input type="text" value={userDetails.fullname} name="fullname" id="fullnameInput" className='form-control' onChange={(e)=>setUserDetails({...userDetails,fullname:e.target.value})}/>
             :
-            <span>{existingUser.fullname}</span>
+            <span>{userDetails.fullname}</span>
             }
           </div>
 
@@ -151,7 +195,7 @@ function ManageAccount() {
             {isEdit?
             <input type="text" value={userDetails.username} name="username" id="usernameInput" className='form-control' onChange={(e)=>setUserDetails({...userDetails,username:e.target.value})}/>
             :
-            <span>{existingUser.username}</span>
+            <span>{userDetails.username}</span>
             }
           </div>
 
@@ -160,7 +204,7 @@ function ManageAccount() {
             {isEdit?
             <input type="text" value={userDetails.department} name="department" id="departmentInput" className='form-control' onChange={(e)=>setUserDetails({...userDetails,department:e.target.value})}/>
             :
-            <span>{existingUser.department}</span>
+            <span>{userDetails.department}</span>
             }
           </div>
 
@@ -169,7 +213,7 @@ function ManageAccount() {
             {isEdit?
             <input type="text" value={userDetails.yearofstudy} name="yofstudy" id="yofstudyInput" className='form-control' onChange={(e)=>setUserDetails({...userDetails,yearofstudy:e.target.value})}/>
             :
-            <span>{existingUser.yearofstudy}</span>
+            <span>{userDetails.yearofstudy}</span>
             }
           </div>
 
