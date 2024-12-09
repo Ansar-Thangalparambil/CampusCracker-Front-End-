@@ -5,7 +5,7 @@ import footLogo from '../assets/footLogo.png'
 function Footer() {
   return (
     <div>
-        <div className='footer  py-5 justify-content-center d-flex  '> {/* py-padding Y axis ,JC-For alligning content only work with display flex(d-flex) */}
+        <div className='footer  py-5 justify-content-center d-flex text-center align-items-center flex-column'> {/* py-padding Y axis ,JC-For alligning content only work with display flex(d-flex) */}
             
           <div className="foot-icon d-flex align-items-center">
             <img src={footLogo} alt="" />

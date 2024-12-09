@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import learning from '../assets/learning.jpg'
-import './Landingpage.css'
+import learning from '../assets/learning-hd.png'
+import './Css/Landingpage.css'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 

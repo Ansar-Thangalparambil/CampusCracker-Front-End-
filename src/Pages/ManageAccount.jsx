@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import '../Pages/ManageAccounts.css'
+import '../Pages/Css/ManageAccounts.css'
 import userIMG from '../assets/default-avatar-icon-of-social-media-user-vector.jpg'
 import { getUserDetailsAPI, updateDetailsAPI } from '../services/allAPI';
 import { BASE_URL } from '../services/baseurl';

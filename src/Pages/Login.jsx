@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Title from '../components/Title'
-import './Loginpage.css'
+import './Css/Loginpage.css'
 import { Link, useNavigate } from 'react-router-dom'
 import Register from './Register'
 import { loginAPI } from '../services/allAPI'
@@ -53,7 +53,7 @@ function Login({register}) { /* data passed for register */
   }
 
   return (
-    <div className='total d-flex justify-content-center flex-column align-items-center'>
+    <div className='total d-flex justify-content-center flex-column align-items-center'  style={{backgroundColor: "#fff"}}>
       <div className='box px-5 py-4 col-md-4'>
         <div className="headttl mb-3">
           <Title/>

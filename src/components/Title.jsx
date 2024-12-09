@@ -1,7 +1,7 @@
 import React from 'react'
 import brainimg from '../assets/image.png'
 import { Link } from 'react-router-dom'
-import '../Pages/Landingpage.css'
+import '../Pages/Css/Landingpage.css'
 import './Header.css'
 
 function Title() {
