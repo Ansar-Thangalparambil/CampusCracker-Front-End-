@@ -1,8 +1,8 @@
 body {
-  background-color: white !important;  /* Important for making changes forcefully */
+  background-color: #FFF4DE !important;  /* Important for making changes forcefully */
   color: #000 !important;
   font-family: "Poppins", sans-serif !important;
-  
+  padding: 25px 30px 10px;
 }
 
 .footer{
