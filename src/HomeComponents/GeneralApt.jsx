@@ -1,6 +1,7 @@
 import React from 'react'
 import pot from '../assets/pot.jpg'
 import proloss from '../assets/proloss.jpg'
+import gaImg from '../assets/boy-questionmark.png'
 // Modal imports
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
@@ -58,8 +59,44 @@ function GeneralApt() {
 
   return (
     <>
-    {/* Modal */}
-    <Modal show={show} onHide={handleClose} aria-labelledby="contained-modal-title-vcenter"
+
+      <div className='col-md-7'>
+
+        <div className="content-box">
+
+          <div className="box-image">
+            <img src={gaImg} alt="" />
+          </div>
+
+          <div className="all-content">
+
+            <div>
+              <div className="content-title">
+                <span>General Aptitude</span>
+              </div>
+  
+              <div className="content-info">
+                <p className="m-0">
+                  The General Aptitude section of CampusCracker is a dynamic and interactive learning platform designed to sharpen students' problem-solving and analytical skills.
+                </p>
+              </div>
+            </div>
+
+            <div className="showmore">
+              <button onClick={handleShow}>
+                Show more
+                <i class="fa-solid fa-arrow-right fs-4"></i>
+              </button>
+            </div>
+            
+          </div>
+
+        </div>
+
+      </div>
+
+      {/* Modal */}
+      <Modal show={show} onHide={handleClose} aria-labelledby="contained-modal-title-vcenter"
       centered>
         <Modal.Header closeButton>
           <Modal.Title>General Aptitude</Modal.Title>
@@ -79,9 +116,7 @@ function GeneralApt() {
           </Modal.Body>
         </div>
       </Modal>
-        <div>
-            <button onClick={handleShow} className='btn-info border-0 rounded-5 px-3 py-2 fw-semibold '>Show more...</button>
-        </div>
+      
     </>
   )
 }

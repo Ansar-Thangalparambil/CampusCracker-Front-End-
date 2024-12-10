@@ -16,7 +16,7 @@ function Header() {
   }
 
   return (
-    <div className='header p-3 row'>
+    <div className='header py-2 px-3 d-flex'>
       <div className="col-md-3"></div>
 
       <div className='col-md-6 d-flex align-items-center justify-content-center'>

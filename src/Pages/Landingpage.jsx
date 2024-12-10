@@ -7,9 +7,9 @@ import Footer from '../components/Footer'
 
 function Landingpage() {
   return (
-    <div className='px-5 py-3'> 
+    <div className=''> 
     <Header/>
-      <div className=" gap-5 d-flex align-items-center mb-3" >
+      <main className=" gap-5 d-flex align-items-center mb-3" >
         <div className="img">
           <img src={learning} alt="" height={'455px'} />
         </div>
@@ -22,7 +22,7 @@ function Landingpage() {
             </button>
           </Link>
         </div>
-      </div>
+      </main>
       <Footer/>
     </div> 
   )

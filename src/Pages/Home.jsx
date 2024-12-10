@@ -27,33 +27,30 @@ function Home() {
           {/* Overview */}
           <Overview/>
 
-        </div>
+          <div className="col-md-1"></div>
 
-
-        
-
-        
-
-        <div class="p-3 text-dark">
-          <h5 class="">General Aptitude</h5>
-          <p class="">The General Aptitude section of CampusCracker is a dynamic and interactive learning platform designed to sharpen students' problem-solving and analytical skills.</p>
-          {/* <p class="card-text"><small class="">Last updated 3 mins ago</small></p> */}
+          {/* General Aptitude */}
           <GeneralApt/>
+
         </div>
 
-        <div class="p-3 text-dark">
-          <h5 class="">Verbal and Reasoning</h5>
-          <p class="">The Verbal Ability section of CampusCracker is designed to enhance students' language proficiency and communication skills, crucial for success in campus placements and competitive exams.</p>
-          {/* <p class="card-text"><small class="">Last updated 3 mins ago</small></p> */}
+        {/* Bottom row */}
+        <div className="row">
+
+          {/* Verbal Reasoning */}
           <VerbalRsng/>
+
+          {/* Online tests */}
+          <OnlineTests/>
+
+
         </div>
 
-        <div class="p-3 text-dark">
-          <h5 class="">Onlne Tests</h5>
-          <p class="">The Online Test section of CampusCracker offers a seamless and comprehensive platform for students to take timed assessments, mimicking real-world placement exams and competitive tests.</p>
-          {/* <p class="card-text"><small class="">Last updated 3 mins ago</small></p> */}
-          <OnlineTests/>
-        </div>
+
+        
+
+        
+        
 
       </main>
 

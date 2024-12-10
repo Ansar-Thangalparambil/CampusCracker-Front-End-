@@ -53,7 +53,7 @@ function Login({register}) { /* data passed for register */
   }
 
   return (
-    <div className='total d-flex justify-content-center flex-column align-items-center'  style={{backgroundColor: "#fff"}}>
+    <div className='total d-flex justify-content-center flex-column align-items-center'  >
       <div className='box px-5 py-4 col-md-4'>
         <div className="headttl mb-3">
           <Title/>
