@@ -97,24 +97,32 @@ function GeneralApt() {
 
       {/* Modal */}
       <Modal show={show} onHide={handleClose} aria-labelledby="contained-modal-title-vcenter"
-      centered>
-        <Modal.Header closeButton>
-          <Modal.Title>General Aptitude</Modal.Title>
-        </Modal.Header>
-        <div className='d-flex '> 
-          <Modal.Body>
-           <div className='d-flex justify-content-evenly mb-3'>
-              Arithmetic Aptitude
-              <Link to={'/arithmetic'} state={{data:datas}}><Button className='rounded-5' variant="primary" >Try now!</Button></Link>
-           </div>
+        centered className='content-modal'>
 
-           <div className='d-flex justify-content-evenly mb-3'>
-              Online Aptitude Test
-              <Link to={'/arithtest'} state={{data:datas}}><Button className='rounded-5' variant="primary" >Try now!</Button></Link>
-           </div>
+          <Modal.Header closeButton>
+            <Modal.Title>General Aptitude</Modal.Title>
+          </Modal.Header>
 
-          </Modal.Body>
-        </div>
+            <Modal.Body>
+
+              <div className='modal-menu'>
+                <span>Arithmetic Aptitude</span>
+
+                <Link to={'/arithmetic'} state={{data:datas}} className='path-link'>
+                  <Button>Try now!</Button>
+                </Link>
+              </div>
+
+              <div className='modal-menu'>
+                <span>Online Aptitude Test</span>
+
+                <Link to={'/arithtest'} state={{data:datas}} className='path-link'>
+                  <Button>Try now!</Button>
+                </Link>
+              </div>
+
+            </Modal.Body>
+
       </Modal>
       
     </>

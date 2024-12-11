@@ -68,14 +68,31 @@
     border: none;
     border-radius: 10px;
     background: #CC4F40;
-    padding:5px 5px 5px 25px;
+    padding:5px 10px 5px 25px;
     font-size: 20px;
     font-weight: 500;
-
+    transition: background-color .2s,box-shadow .2s;
     display: flex;
-    gap: 110px;
+    align-items: center;
+    gap: 40px;
 }
 
 .showmore button i{
     transform: rotate(-45deg);
+    transition: transform ease .2s;
 }
+
+.showmore button:hover{
+    background-color: transparent !important;
+    /* box-shadow: none !important; */
+    box-shadow: 0 0 5px #CC4F40;
+}
+
+.showmore button:hover i{
+    transform: rotate(0deg);
+}
+
+/* .showmore button:focus,.showmore button:active{
+    background-color: transparent !important;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+} */

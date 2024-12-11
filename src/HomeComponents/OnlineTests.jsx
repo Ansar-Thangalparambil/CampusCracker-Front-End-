@@ -50,29 +50,42 @@ function OnlineTests() {
 
       </div>
 
-
       {/* Modal */}
       <Modal show={show} onHide={handleClose} aria-labelledby="contained-modal-title-vcenter"
-        centered>
+        centered className='content-modal'>
+
           <Modal.Header closeButton>
-            <Modal.Title>General Aptitude</Modal.Title>
+            <Modal.Title>Online Tests</Modal.Title>
           </Modal.Header>
-          <div className='d-flex '> 
+
             <Modal.Body>
-            <div className='d-flex justify-content-evenly mb-3'>
-                Aptitude Test
-                <Link to={'/arithtest'}><Button className='rounded-5' variant="primary" >Try now!</Button></Link>
-            </div>
-            <div className='d-flex justify-content-evenly mb-3'>
-                Verbal Ability Test
-                <Link to={'/vbabtytest'}><Button className='rounded-5' variant="primary" >Try now!</Button></Link>
-            </div>
-            <div className='d-flex justify-content-evenly mb-3'>
-                Logical Reasoning Test
-                <Link to={'/logirsngtest'}><Button className='rounded-5' variant="primary" >Try now!</Button></Link>
-            </div>
+
+              <div className='modal-menu'>
+                <span>Aptitude Test</span>
+
+                <Link to={'/arithtest'}>
+                  <Button>Try now!</Button>
+                </Link>
+              </div>
+
+              <div className='modal-menu'>
+                <span>Verbal Ability Test</span>
+
+                <Link to={'/vbabtytest'}>
+                  <Button>Try now!</Button>
+                </Link>
+              </div>
+
+              <div className='modal-menu'>
+                <span>Logical Reasoning Test</span>
+
+                <Link to={'/logirsngtest'}>
+                  <Button>Try now!</Button>
+                </Link>
+              </div>
+
             </Modal.Body>
-          </div>
+
       </Modal>
         
     </>

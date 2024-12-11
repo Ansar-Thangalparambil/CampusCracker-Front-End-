@@ -52,31 +52,48 @@ function VerbalRsng() {
 
       {/* Modal */}
       <Modal show={show} onHide={handleClose} aria-labelledby="contained-modal-title-vcenter"
-      centered>
-        <Modal.Header closeButton>
-          <Modal.Title>General Aptitude</Modal.Title>
-        </Modal.Header>
-        <div className='d-flex '> 
-          <Modal.Body>
-           <div className='d-flex justify-content-evenly mb-3'>
-              Verbal Ability
-              <Link to={'/verbalability'}><Button className='rounded-5' variant="primary" >Try now!</Button></Link>
-           </div>
-           <div className='d-flex justify-content-evenly mb-3'>
-              Logical Reasoning
-              <Link to={'/logicalreasoning'}><Button className='rounded-5' variant="primary" >Try now!</Button></Link>
-           </div>
-           <div className='d-flex justify-content-evenly mb-3'>
-              Verbal Reasoning
-              <Link to={'/vbrsng'}><Button className='rounded-5' variant="primary" >Try now!</Button></Link>
-           </div>
-           <div className='d-flex justify-content-evenly mb-3'>
-              Non Verbal Reasoning
-              <Link to={'/nonvbrsng'}><Button className='rounded-5' variant="primary" >Try now!</Button></Link>
-           </div>
+      centered className='content-modal'>
 
-          </Modal.Body>
-        </div>
+        <Modal.Header closeButton>
+          <Modal.Title>Verbal Reasoning</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>
+
+          <div className='modal-menu'>
+            <span>Verbal Ability</span>
+
+            <Link to={'/verbalability'}>
+              <Button>Try now!</Button>
+            </Link>
+          </div>
+
+          <div className='modal-menu'>
+            <span>Logical Reasoning</span>
+
+            <Link to={'/logicalreasoning'}>
+              <Button>Try now!</Button>
+            </Link>
+          </div>
+
+          <div className='modal-menu'>
+            <span>Verbal Reasoning</span>
+
+            <Link to={'/vbrsng'}>
+              <Button>Try now!</Button>
+            </Link>
+          </div>
+          
+          <div className='modal-menu'>
+            <span>Non Verbal Reasoning</span>
+
+            <Link to={'/nonvbrsng'}>
+              <Button>Try now!</Button>
+            </Link>
+          </div>
+
+        </Modal.Body>
+        
       </Modal>
         
     </>

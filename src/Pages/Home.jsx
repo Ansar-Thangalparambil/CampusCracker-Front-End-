@@ -1,5 +1,8 @@
 import React from 'react'
+
 import './Css/Home.css'
+import '../HomeComponents/Css/modal.css'
+
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import GeneralApt from '../HomeComponents/GeneralApt'
