@@ -15,12 +15,14 @@ function Landingpage() {
         </div>
         <div className="desc-btn ">
           <p style={{fontSize:"25px",textAlign:'justify',width:'100%'}} className=''>CampusCracker is an innovative and comprehensive platform designed to revolutionize the way students prepare for campus placements and competitive exams. Tailored specifically for students of MES College of Engineering, Kuttipuram.</p>
-          <Link to={'/login'} className='linkline d-flex justify-content-start'>
-            <button className=' d-flex gap-3 align-items-center px-4 py-2 border-0 fw-semibold rounded-5 text-center'>
-              Let's Crack It! 
-              <i class="fa-solid fa-paper-plane"></i>
-            </button>
-          </Link>
+         
+            <Link to={'/login'} className='linkline d-flex justify-content-start d-inline-flex'>
+              <button className=' d-flex gap-3 align-items-center px-4 py-2 border-0 fw-semibold rounded-5 text-center'>
+                Let's Crack It! 
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </Link>
+         
         </div>
       </main>
       <Footer/>

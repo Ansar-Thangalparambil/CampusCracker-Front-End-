@@ -1,6 +1,10 @@
 import React from 'react'
-import pot from '../assets/pot.jpg'
-import proloss from '../assets/proloss.jpg'
+import pot from '../assets/pot.png'
+import pal from '../assets/profit-loss.png'
+import taw from '../assets/time-works.png'
+import had from '../assets/height-distance.png'
+import poa from '../assets/poa.png'
+
 import gaImg from '../assets/boy-questionmark.png'
 // Modal imports
 import { useState } from 'react';
@@ -30,25 +34,28 @@ function GeneralApt() {
       category:'PoT'
     },
     {
-      imgSrc:proloss,
+      imgSrc:pal,
       route:'/generalqns',
       routeName:'Profit and Loss',
       section_name:'Arithmetic_aptitude',
       category:'ProfitLoss'
     },
     {
+      imgSrc:poa,
       route:'/generalqns',
       routeName:'Problems on Ages',
       section_name:'Arithmetic_aptitude',
       category:'ProblemsAges'
     },
     {
+      imgSrc:taw,
       route:'/generalqns',
       routeName:'Time and works',
       section_name:'Arithmetic_aptitude',
       category:'TimeWorks'
     },
     {
+      imgSrc:had,
       route:'/generalqns',
       routeName:'Height and Distance',
       section_name:'Arithmetic_aptitude',

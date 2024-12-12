@@ -6,6 +6,7 @@ function SubtopicsHome() {
   
   return (
     <div className='d-flex flex-column'>
+      haaai
       {
         passedData?.length>0?
         passedData.map(item=>(
