@@ -41,7 +41,6 @@ function App() {
         <Route path="/verbalability" element={<VerbalAblty/>}/>
         <Route path='/logicalreasoning' element={<LogicalRsng/>}/>
         <Route path='/nonvbrsng' element={<NonVbRsng/>}/>
-        <Route path='/arithtest' element={<OnlineArithapt/>}/>
         <Route path='/vbrsng' element={<VbRsng/>}/>
         <Route path='/vbabtytest' element={<VbabtyTest/>}/>
         <Route path='/logirsngtest' element={<LogiRsngTest/>}/>

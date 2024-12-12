@@ -1,0 +1,71 @@
+
+.section-card{
+    background-color: #1E1E1E;
+    border-radius: 12px;
+    color: #FFF4DE;
+    padding: 15px;
+    display: flex;
+}
+
+.section-image{
+    display: flex;
+    align-items:center;
+}
+
+.section-image img{
+    width: 150px;
+    height: 150px;
+}
+
+.section-details{
+    padding: 7px 7px 0px;
+}
+
+.section-name span{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.section-info span{
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.practice{
+    margin-top: 10px;
+    display: flex;
+    justify-content: end;
+}
+
+.practice button{
+    color: #FFF4DE;
+    border: none;
+    border-radius: 6px;
+    background: #CC4F40;
+    padding:3px 7px 3px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color .2s,box-shadow .2s;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.practice a{
+    text-decoration: none;
+}
+
+.practice button i{
+    transform: rotate(-45deg);
+    transition: transform ease .2s;
+}
+
+.practice button:hover{
+    background-color: transparent !important;
+    /* box-shadow: none !important; */
+    box-shadow: 0 0 5px #CC4F40;
+}
+
+.practice button:hover i{
+    transform: rotate(0deg);
+}
