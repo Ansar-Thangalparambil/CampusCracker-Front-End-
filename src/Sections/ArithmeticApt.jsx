@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 // import pot from '../assets/pot.jpg'
 import { Link, useLocation } from 'react-router-dom'
 import Header from '../components/Header';
@@ -8,14 +8,36 @@ import Footer from '../components/Footer';
 function ArithmeticApt() {
 
   const passedData = useLocation().state?.data
-
   console.log(passedData);
   
+  const mode = useLocation().state?.mode
+  console.log(mode);
+
+  // This function below is for deciding whether the page is for 'Practice' questions or 'Start tests' 
+  // the respective data comes from GeneralApt.jsx
+  const [selectedMode, setSelectedMode] =  useState('')
+  const [pageName,setPageName] = useState('')
+
+  const handleMode =()=>{
+    if(mode === '/subtopicshome'){
+      setSelectedMode('Practise')
+      setPageName('Arithmetic Aptitude Topics')
+    } else{
+      setSelectedMode('Start test')
+      setPageName('Aptitude Test Topics')
+    }
+  }
+  // Calling the function created above when the pageloads. 
+  useEffect(()=>{
+    handleMode()
+  })
+
+  // const pageName = 'Arithmetic Aptitude Topics'
 
   return (
     <>
 
-      <Header/>
+      <Header pageName={pageName}/>
 
       {/* pot card (stretched link) */}
       <div className="pot row g-4 mt-1">
@@ -45,7 +67,7 @@ function ArithmeticApt() {
   
                 <div className='practice'>
 
-                  <Link to={'/subtopicshome'} state={{data:[
+                  <Link to={mode} state={{data:[
                   {
                     section_name:item.section_name,
                     category:item.category,
@@ -56,7 +78,7 @@ function ArithmeticApt() {
                   }
                   ]}}>
                     <button>
-                      Practice
+                      {selectedMode}
                       <i class="fa-solid fa-arrow-right "></i>
                     </button>
                   </Link>

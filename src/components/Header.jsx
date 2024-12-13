@@ -3,7 +3,7 @@ import './Header.css';
 import Title from './Title';
 import UserPopup from './UserPopup';
 
-function Header() {
+function Header(pageName) {
   const [popup, setPopup] = useState(false)
 
   const [isPopup, setIsPopup] = useState(false)
@@ -17,7 +17,14 @@ function Header() {
 
   return (
     <div className='header py-2 px-3 d-flex'>
-      <div className="col-md-3"></div>
+
+      <div className="col-md-3 d-flex align-items-center justify-content-center">
+
+        <div className="pagename">
+          <span>{pageName.pageName}</span>
+        </div>
+
+      </div>
 
       <div className='col-md-6 d-flex align-items-center justify-content-center'>
         <Title />

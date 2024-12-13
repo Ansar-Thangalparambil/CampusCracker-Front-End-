@@ -9,10 +9,10 @@ function Title() {
     <Link className='titllink' to={''}>
         <div className='title d-flex gap-1 justify-content-center '>
     
-                <h1 className='fw-bold' >CampusCracker</h1>
-                <img  className='my-2' src={brainimg} alt="" width={30} height={30} />
-    
-           </div>
+          <h1 className='fw-bold' >CampusCracker</h1>
+          <img  className='my-2' src={brainimg} alt="" width={30} height={30} />
+
+        </div>
     </Link>
   )
 }

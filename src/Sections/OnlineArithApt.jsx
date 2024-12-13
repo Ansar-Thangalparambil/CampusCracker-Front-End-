@@ -9,6 +9,11 @@ import { Link, useLocation } from 'react-router-dom'
 function OnlineArithApt() {
 
   const passedData = useLocation().state?.data
+  console.log(passedData);
+  
+  const mode = useLocation().state?.mode
+  console.log(mode);
+  
 
   const clearSession = () =>{
     sessionStorage.removeItem("examCompleted")

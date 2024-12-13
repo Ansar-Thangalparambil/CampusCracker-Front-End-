@@ -14,6 +14,17 @@
     /* transform: scaleX(0.8); */
 }
 
+/* Page Name */
+
+.pagename span{
+  font-size: 20px;
+  font-weight: 700;
+  color: #FFF4DE;
+  font-style:oblique;
+  /* text-decoration: 1px underline #1E1E1E ; */
+}
+
+
 .head-controls{
     color: #FFEFCD;
     -webkit-text-stroke: 1px #000;
