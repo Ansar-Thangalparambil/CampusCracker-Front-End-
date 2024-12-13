@@ -264,16 +264,18 @@ function GeneralExam() {
         </div>
 
         <Modal show={show} onHide={handleClose} aria-labelledby="contained-modal-title-vcenter"
-      centered backdrop="static">
-        <Modal.Header closeButton>
-          <Modal.Title>Notice!</Modal.Title>
-        </Modal.Header>
-        <div className='d-flex '> 
-          <Modal.Body>
-           <h4>Your current exam session is over. Please go back to<Link to={'/home'} onClick={goHome} className='border-0 py-1 px-2 rounded-4 text-white '>Home</Link></h4> 
-          </Modal.Body>
-        </div>
-      </Modal>
+        centered backdrop="static">
+            <Modal.Header closeButton>
+                <Modal.Title>Notice!</Modal.Title>
+            </Modal.Header>
+            <div className='d-flex '> 
+                <Modal.Body>
+                    <span>
+                        Your last exam session was over. Please go back to<Link to={'/home'} onClick={goHome} className='border-0 py-1 px-2 rounded-4 text-white '>Home</Link>
+                    </span> 
+                </Modal.Body>
+            </div>
+        </Modal>
     </>
   )
 }
