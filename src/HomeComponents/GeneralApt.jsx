@@ -115,7 +115,7 @@ function GeneralApt() {
               <div className='modal-menu'>
                 <span>Arithmetic Aptitude</span>
 
-                <Link to={'/arithmetic'} state={{data:datas}} className='path-link'>
+                <Link to={'/arithmetic'} state={{data:datas,mode:'/subtopicshome'}} className='path-link'>
                   <Button>Try now!</Button>
                 </Link>
               </div>
@@ -123,7 +123,7 @@ function GeneralApt() {
               <div className='modal-menu'>
                 <span>Online Aptitude Test</span>
 
-                <Link to={'/arithtest'} state={{data:datas}} className='path-link'>
+                <Link to={'/arithmetic'} state={{data:datas,mode:'/generalexam'}} className='path-link'>
                   <Button>Try now!</Button>
                 </Link>
               </div>
