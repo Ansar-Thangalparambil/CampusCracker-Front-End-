@@ -167,100 +167,157 @@ function GeneralExam() {
   
   return (
     <>
-        <div className="examPage container py-5">
-            <div className="exmHead ">
-                <div className="exmName">
-                    <h1>{passedData.routeName} Exam</h1>
+        <div className="examPage d-flex flex-column gap-3 pb-4">
+
+            <Link to={'/home'} className="back-btn d-inline-flex">
+                <button className='d-flex align-items-center gap-3 py-1 ps-2 pe-2'>
+                    <i class="fa-solid fa-arrow-right "></i>
+                    <span>Home</span>
+                </button>
+            </Link>
+
+            <div className="examHead row">
+
+                <div className='col-md-6 d-flex align-items-center'>
+
+                    <div className="examName">
+                        <span>{passedData.routeName} Exam</span>
+                    </div>
+
                 </div>
-                <div className="exmDetails d-flex justify-content-between">
-                    <div className="totQns">
-                        <h3>{examQns.length} Questions</h3>
+
+               <div className='col-md-6 '>
+
+                    <div className="exmDetails d-flex justify-content-between align-items-center">
+    
+                        <div className='tot-pass d-flex flex-column gap-3'>
+
+                            <div className="totQns">
+                                <span><span className='fw-semibold'>{examQns.length}</span> Questions</span>
+                            </div>
+        
+                            <div className="passMarks">
+                                <span>Pass Marks:<span className='fw-semibold'> 65%</span></span>
+                            </div>
+
+                        </div>
+    
+                        <div className="timeRemaining d-flex flex-column justify-content-center align-items-center ">
+                            <span className='time-rem  text-center'>Time<br />Remaining</span>
+                            <span className='time-num mb-2'>{formatTime(timeRemaining)}</span>
+                        </div>
+    
                     </div>
-                    <div className="passMarks">
-                        <h4>Pass Marks: 65%</h4>
-                    </div>
-                    <div className="timeRemaining">
-                        <h3>Time remaining:{formatTime(timeRemaining)}</h3>
-                    </div>
-                </div>
+
+               </div>
+
             </div>
-            <hr />
-            <div className="exmbody">
-                {
-                    examQns?.length>0?
-                    examQns.map((item,index)=>(
-                        <div className="totQstn my-5">
-                    <div className="qstn d-flex gap-2">
-                        <span>{index+1}:</span>
-                        <p>{item.question}</p>
-                    </div>
-                    <div className="options">
 
-                        <div className="option d-flex align-items-center">
-                            <input type="radio"
-                                name={`answer-${index}`}
-                                id={`optionA-${index}`}
-                                className="radio-input"
-                                onChange={() => handleAnswers(item._id,item.option_a)}
-                            />
-                            <label htmlFor={`optionA-${index}`} className="option-label">
-                                <span className="circle">A</span> {item.option_a}
-                            </label>
+            {/* Exam body */}
+            <div className='exambody row'>
+                <div className="col-12">
+    
+                    {
+                        examQns?.length>0?
+                        examQns.map((item,index)=>(
+    
+                        <div className="totQstn pt-3">
+    
+                            <div className="qstn d-flex gap-2">
+                                <span>{index+1}:</span>
+                                <p>{item.question}</p>
+                            </div>
+    
+                            <div className="options pb-3 d-flex ">
+    
+                                <div className='leftside'>
+                                    <div className="option d-flex align-items-center">
+    
+                                        <input type="radio"
+                                            name={`answer-${index}`}
+                                            id={`optionA-${index}`}
+                                            className="radio-input"
+                                            onChange={() => handleAnswers(item._id,item.option_a)}
+                                        />
+    
+                                        <label htmlFor={`optionA-${index}`} className="option-label">
+                                            <span className="circle">A</span> {item.option_a}
+                                        </label>
+    
+                                    </div>
+    
+                                    <div className="option d-flex align-items-center">
+    
+                                        <input type="radio"
+                                            name={`answer-${index}`}
+                                            id={`optionC-${index}`}
+                                            className="radio-input"
+                                            onChange={() => handleAnswers(item._id,item.option_c)}
+                                        />
+    
+                                        <label htmlFor={`optionC-${index}`} className="option-label">
+                                            <span className="circle">C</span> {item.option_c}
+                                        </label>
+    
+                                    </div>
+                                </div>
+    
+                                <div className='rightside'>
+                                    <div className="option d-flex align-items-center">
+    
+                                        <input type="radio"
+                                            name={`answer-${index}`}
+                                            id={`optionB-${index}`}
+                                            className="radio-input"
+                                            onChange={() => handleAnswers(item._id,item.option_b)}
+                                        />
+    
+                                        <label htmlFor={`optionB-${index}`} className="option-label">
+                                            <span className="circle">B</span> {item.option_b}
+                                        </label>
+    
+                                    </div>
+    
+                                    <div className="option d-flex align-items-center">
+    
+                                        <input type="radio"
+                                            name={`answer-${index}`}
+                                            id={`optionD-${index}`}
+                                            className="radio-input"
+                                            onChange={() => handleAnswers(item._id,item.option_d)}
+                                        />
+    
+                                        <label htmlFor={`optionD-${index}`} className="option-label">
+                                            <span className="circle">D</span> {item.option_d}
+                                        </label>
+    
+                                    </div>
+                                </div>
+    
+                            </div>
+
+                            <hr />
+
                         </div>
-
-                        <div className="option d-flex align-items-center">
-                            <input type="radio"
-                                name={`answer-${index}`}
-                                id={`optionB-${index}`}
-                                className="radio-input"
-                                onChange={() => handleAnswers(item._id,item.option_b)}
-                            />
-                            <label htmlFor={`optionB-${index}`} className="option-label">
-                                <span className="circle">B</span> {item.option_b}
-                            </label>
-                        </div>
-
-                        <div className="option d-flex align-items-center">
-                            <input type="radio"
-                                name={`answer-${index}`}
-                                id={`optionC-${index}`}
-                                className="radio-input"
-                                onChange={() => handleAnswers(item._id,item.option_c)}
-                            />
-                            <label htmlFor={`optionC-${index}`} className="option-label">
-                                <span className="circle">C</span> {item.option_c}
-                            </label>
-                        </div>
-
-                        <div className="option d-flex align-items-center">
-                            <input type="radio"
-                                name={`answer-${index}`}
-                                id={`optionD-${index}`}
-                                className="radio-input"
-                                onChange={() => handleAnswers(item._id,item.option_d)}
-                            />
-                            <label htmlFor={`optionD-${index}`} className="option-label">
-                                <span className="circle">D</span> {item.option_d}
-                            </label>
-                        </div>
-
-                    </div>
-                </div>
-                    )):
-                    (<h1 className='text-danger'>Sorry! There is no questions added yet. Visit again later.</h1>)    
+                    
+                        ))
+                        :
+                        (<h1 className='text-danger'>Sorry! There is no questions added yet. Visit again later.</h1>)    
                     }
-            </div>
-            {
-                examQns.length>0 &&
-                (
-                    <div>
-                        <hr />
+
+                    
+                    {
+                        examQns.length>0 &&(
+                                    
                         <div>
-                            <button className='bg-success border-0 py-2 px-3'  onClick={handleSubmit}>Submit</button>
+                            <button className='submit-btn py-2 px-3 fw-semibold'  onClick={handleSubmit}>Submit</button>
                         </div>
-                    </div>
-                )
-            }
+                    )}
+    
+                </div>
+
+            </div>
+
         </div>
 
         <Modal show={show} onHide={handleClose} aria-labelledby="contained-modal-title-vcenter"
