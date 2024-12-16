@@ -8,7 +8,7 @@ import Modal from 'react-bootstrap/Modal';
 function GeneralExam() {
 
     const passedData = useLocation().state?.data[0]
-    // console.log(passedData);
+    console.log(passedData);
     
     const section_name = passedData.section_name
     const category = passedData.category
@@ -50,17 +50,17 @@ function GeneralExam() {
     },[])
 
     // Timer countdown logic
-    useEffect(() => {
-        if (timeRemaining <= 0) {
-            handleSubmit(); // Automatically submit when time runs out
-            return;
-        }
-        const timer = setInterval(() => {
-            setTimeRemaining((prev) => prev - 1);
-        }, 1000);
+    // useEffect(() => {
+    //     if (timeRemaining <= 0) {
+    //         handleSubmit(); // Automatically submit when time runs out
+    //         return;
+    //     }
+    //     const timer = setInterval(() => {
+    //         setTimeRemaining((prev) => prev - 1);
+    //     }, 1000);
         
-        return () => clearInterval(timer); // Clean up timer on component unmount
-    }, [timeRemaining]);
+    //     return () => clearInterval(timer); // Clean up timer on component unmount
+    // }, [timeRemaining]);
 
     // Convert seconds to minutes and seconds for display
     const formatTime = (time) => {
@@ -176,6 +176,7 @@ function GeneralExam() {
                 </button>
             </Link>
 
+            {/* Exam head */}
             <div className="examHead row">
 
                 <div className='col-md-6 d-flex align-items-center'>
@@ -224,13 +225,20 @@ function GeneralExam() {
                         <div className="totQstn pt-3">
     
                             <div className="qstn d-flex gap-2">
-                                <span>{index+1}:</span>
-                                <p>{item.question}</p>
+                                <span>
+                                    {index+1}:
+                                </span>
+                                
+                                <p>
+                                    {item.question}
+                                </p>
                             </div>
-    
+                            
+                            {/* Options */}
                             <div className="options pb-3 d-flex ">
     
                                 <div className='leftside'>
+
                                     <div className="option d-flex align-items-center">
     
                                         <input type="radio"
@@ -240,7 +248,7 @@ function GeneralExam() {
                                             onChange={() => handleAnswers(item._id,item.option_a)}
                                         />
     
-                                        <label htmlFor={`optionA-${index}`} className="option-label">
+                                        <label htmlFor={`optionA-${index}`} className="option-label d-flex gap-1">
                                             <span className="circle">A</span> {item.option_a}
                                         </label>
     
@@ -263,6 +271,7 @@ function GeneralExam() {
                                 </div>
     
                                 <div className='rightside'>
+
                                     <div className="option d-flex align-items-center">
     
                                         <input type="radio"
@@ -292,6 +301,7 @@ function GeneralExam() {
                                         </label>
     
                                     </div>
+                                    
                                 </div>
     
                             </div>
