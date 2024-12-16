@@ -13,7 +13,8 @@ function SubtopicsHome() {
           <Link to={item.route} state={{data:
             {
               section_name:item.section_name,
-              category:item.category
+              category:item.category,
+              routeName:item.routeName
             }
           }}>{item.routeName}</Link>
           

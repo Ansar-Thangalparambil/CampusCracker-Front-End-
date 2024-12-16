@@ -36,6 +36,11 @@
     /* color: #1E1E1E; */
 }
 
+.tot-pass img{
+    width: 223px;
+    height: 48px;
+}
+
 .timeRemaining{
     border: .5px solid #A4A4A4;
     border-radius: 50%;
@@ -96,6 +101,7 @@
 .option {
     display: flex;
     align-items: center;
+    gap: 15px;
 }
 
 .radio-input {
@@ -140,8 +146,55 @@
     align-items: center;
     width: 24px;
     height: 24px;
-    /* border: 2px solid #000;
-    border-radius: 50%; */
+    border: 2px solid #1E1E1E;
+    border-radius: 50%;
     margin-right: 8px;
     font-weight: 700;
+}
+
+.correct {
+    color: green;
+    font-weight: bold;
+}
+
+.correct span{
+    border: 2px solid green;
+}
+
+.incorrect span{
+    border: 2px solid red
+}
+
+.incorrect {
+    color: red;
+    font-weight: bold;
+}
+
+.ansandexplnsn button,.working button{
+    border: none;
+    background-color: #1E1E1E;
+    color: #FFF4DE;
+    border-radius: 6.5px;
+    padding: 6px 8px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif !important;
+}
+
+.ansandexplnsn button:hover svg,.working button:hover svg{
+    color: #FFD700;
+}
+
+.working button{
+    border-radius: 6.5px 6.5px 0 0;
+}
+
+.working button svg{
+    color: #FFD700;
+    filter: drop-shadow(0 0 2px #FFD700);
+}
+
+.solution-box .collapse{
+    border: .5px solid #A4A4A4;
+    border-radius: 0px 20px 20px;
+    padding: 25px;
 }
