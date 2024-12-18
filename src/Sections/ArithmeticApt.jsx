@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom'
 import Header from '../components/Header';
 import './Css/SectionHome.css'
 import Footer from '../components/Footer';
+import SubtopicModal from './SubtopicModal';
 
 function ArithmeticApt() {
 
@@ -14,16 +15,17 @@ function ArithmeticApt() {
   console.log(mode);
 
   // This function below is for deciding whether the page is for 'Practice' questions or 'Start tests' 
-  // the respective data comes from GeneralApt.jsx
-  const [selectedMode, setSelectedMode] =  useState('')
+  // The respective data comes from GeneralApt.jsx
+
+  // const [selectedMode, setSelectedMode] =  useState('')
   const [pageName,setPageName] = useState('')
 
   const handleMode =()=>{
     if(mode === '/subtopicshome'){
-      setSelectedMode('Practise')
+      // setSelectedMode('Practise')
       setPageName('Arithmetic Aptitude Topics')
     } else{
-      setSelectedMode('Start test')
+      // setSelectedMode('Start test')
       setPageName('Aptitude Test Topics')
     }
   }
@@ -65,7 +67,8 @@ function ArithmeticApt() {
                   </span>
                 </div>
   
-                <div className='practice'>
+                {/* Practice */}
+                {/* <div className='practice'>
 
                   <Link to={mode} state={{data:[
                   {
@@ -83,7 +86,17 @@ function ArithmeticApt() {
                     </button>
                   </Link>
 
-                </div>
+                </div> */}
+
+                <SubtopicModal state={{
+                  section_name:item.section_name,
+                  category:item.category,
+                  routeName:item.routeName,
+                  route:item.route,
+                  formulaName:item.formulaName,
+                  formulaRoute:item.formulaRoute,
+                  mode,
+                }}/>
   
               </div>
               

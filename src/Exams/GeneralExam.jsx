@@ -7,7 +7,7 @@ import Modal from 'react-bootstrap/Modal';
 
 function GeneralExam() {
 
-    const passedData = useLocation().state?.data[0]
+    const passedData = useLocation().state?.data
     console.log(passedData);
     
     const section_name = passedData.section_name
@@ -50,6 +50,7 @@ function GeneralExam() {
     },[])
 
     // Timer countdown logic
+
     // useEffect(() => {
     //     if (timeRemaining <= 0) {
     //         handleSubmit(); // Automatically submit when time runs out
@@ -182,7 +183,7 @@ function GeneralExam() {
                 <div className='col-md-6 d-flex align-items-center'>
 
                     <div className="examName">
-                        <span>{passedData.routeName} Exam</span>
+                        <span>{passedData.routeName} - Test</span>
                     </div>
 
                 </div>
@@ -235,9 +236,9 @@ function GeneralExam() {
                             </div>
                             
                             {/* Options */}
-                            <div className="options pb-3 d-flex ">
+                            <div className="options pb-3 row">
     
-                                <div className='leftside'>
+                                <div className='leftside col-6'>
 
                                     <div className="option d-flex align-items-center">
     
@@ -270,7 +271,7 @@ function GeneralExam() {
                                     </div>
                                 </div>
     
-                                <div className='rightside'>
+                                <div className='rightside col-6'>
 
                                     <div className="option d-flex align-items-center">
     
