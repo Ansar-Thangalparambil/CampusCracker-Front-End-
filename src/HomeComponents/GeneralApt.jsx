@@ -11,6 +11,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { Link } from 'react-router-dom';
+
 // import OnlineArithApt from '../Sections/OnlineArithApt';
 
 
@@ -19,7 +20,6 @@ function GeneralApt() {
 
  // For Modal
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -29,7 +29,7 @@ function GeneralApt() {
       route:'/generalqns',
       routeName:'Problems on Train',
       formulaRoute:'/potformulas',
-      formulaName:'Problems On Train - Formulas',
+      formulaName:'Problems on Train - Formulas',
       section_name:'Arithmetic_aptitude',
       category:'PoT'
     },
@@ -118,6 +118,7 @@ function GeneralApt() {
                 <Link to={'/arithmetic'} state={{data:datas,mode:'/subtopicshome'}} className='path-link'>
                   <Button>Try now!</Button>
                 </Link>
+
               </div>
 
               <div className='modal-menu'>
@@ -126,6 +127,7 @@ function GeneralApt() {
                 <Link to={'/arithmetic'} state={{data:datas,mode:'/generalexam'}} className='path-link'>
                   <Button>Try now!</Button>
                 </Link>
+
               </div>
 
             </Modal.Body>

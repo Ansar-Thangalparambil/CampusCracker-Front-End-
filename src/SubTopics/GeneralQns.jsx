@@ -35,7 +35,7 @@ function GeneralQns() {
     
       useEffect(()=>{
         getArithQuestions();
-      });
+      },[]);
     
     //  const [collapseOn,setCollapseOn] = useState(false) 
 
@@ -114,9 +114,9 @@ function GeneralQns() {
                 </p>
               </div>
     
-               <div className="options pb-4 d-flex">
+               <div className="options pb-4 row">
 
-                  <div className="leftside">
+                  <div className="leftside col-6">
 
                     <div className="option d-flex align-items-center">
 
@@ -148,7 +148,7 @@ function GeneralQns() {
 
                   </div>
 
-                  <div className="rightside">
+                  <div className="rightside col-6">
 
                     <div className="option d-flex align-items-center">
 

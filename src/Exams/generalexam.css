@@ -88,9 +88,10 @@
 
 /* Options */
 
-.options{
+/* .options{
+    display: flex;
     gap: 230px;
-}
+} */
 
 .leftside,.rightside{
     display: flex;
@@ -197,4 +198,14 @@
     border: .5px solid #A4A4A4;
     border-radius: 0px 20px 20px;
     padding: 25px;
+}
+
+.sol-answer span{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.sol-explanation span{
+    font-size: 17px;
+    font-weight: 500;
 }
