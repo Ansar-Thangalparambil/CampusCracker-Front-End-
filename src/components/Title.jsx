@@ -6,7 +6,7 @@ import './Header.css'
 
 function Title() {
   return (
-    <Link className='titllink' to={''}>
+    <Link className='titllink' to={'/home'}>
         <div className='title d-flex gap-1 justify-content-center '>
     
           <h1 className='fw-bold' >CampusCracker</h1>

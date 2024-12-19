@@ -1,22 +1,23 @@
+
 .user-popup-container {
     position: fixed;
-    top: 4.5rem;
-    right: 1.5rem;
-    height: 100vh;
+    top: 6.5rem;
+    right: 1.8rem;
+    /* height: 0vh; */
     z-index: 1000;
-    display: flex;
-    justify-content: flex-end;
+    /* display: flex; */
+    /* justify-content:; */
     
 }
 
 .user-popup {
     width: auto; 
-    height: 66vh;
-    background-color: #111520;
-    color: white;
+    height: 55vh;
+    background-color: #FFF4DE;
+    /* color: white; */
     display: flex;
     flex-direction: column;
-    border-left: 2px solid #444;
+    /* border-left: 2px solid #444; */
     padding: 20px;
     transition: transform 0.3s ease-in-out;
     border-radius: 25px;
@@ -26,21 +27,58 @@
     border-radius:50%;
     overflow: hidden;
     border: 1px solid white;
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
+    /* border: 1px solid #CC4F40; */
+    box-shadow: 0px 0px 10px #CC4F40;
 }
 
 .profile-picture img{
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
+}
+
+.name-email .fullname{
+    font-size: 15px;
+    font-weight: 700;
+    color: #CC4F40;
+}
+
+.name-email .em-dip{
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.mng-acc-btn{
+    background-color: #CC4F40;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #FFF4DE;
+    transition: background-color .2s,box-shadow .2s;
+}
+
+.mng-acc-btn:hover{
+    /* background-color: #a43124; */
+    /* font-weight: 600; */
+    box-shadow: 2px 2px 2px #1E1E1E;
+}
+
+.mng-acc-btn:focus,.mng-acc-btn:active{
+    background-color: transparent !important;
+    /* box-shadow: none !important; */
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 .exm-history,.results,.performance{
-    border-top: 1px solid #808080;
-    font-size: .95rem;
+    border-top: .5px solid #CC4F40;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1E1E1E;
 }
 .performance{
-    border-bottom: 1px solid #808080;
+    border-bottom: .5px solid #CC4F40;
 }
 
 .info-body li{
@@ -49,15 +87,16 @@
 
 
 .info-body div{
-    transition: background-color .3s;
+    transition: background-color .2s,color .2s;
 }
 
 .info-body div:hover{
-    background-color: #1f263a75;
+    background-color: #ca5649;
+    color: #FFF4DE;
 }
 
 .info-footer i{
-    color: orange;
+    color: #ca5649;
     transition: color 1.5s ease;
 }
 
@@ -88,3 +127,10 @@
     animation: rotate 2.8s ease ;
 }
 
+.info-footer button{
+    color: #1E1E1E;
+    font-size: 15px;
+    font-weight: 600;
+    border: 1px solid #CC4F40;
+    border-radius: 6px;
+}
